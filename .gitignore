@@ -1,6 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Scala template
-*.class
 *.log
 
 # sbt specific
@@ -86,14 +85,8 @@ sftp-config.json
 
 
 ### Maven template
-target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
 release.properties
-
-
-
-spark-example.iml
-.idea

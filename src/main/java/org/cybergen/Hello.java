@@ -11,9 +11,10 @@ import org.apache.spark.mllib.linalg.Vectors;
 
 /**
  * Created by vishnu on 4/3/15.
+ * sample program
  */
 public class Hello {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("Starting Java Application");
         SparkConf conf = new SparkConf().setAppName("K-means Example").setMaster("spark://cyborg:7077");
         JavaSparkContext sc = new JavaSparkContext(conf);
@@ -31,8 +32,8 @@ public class Hello {
                 }
         );
         parsedData.cache();
-        
-        int numClusters = 2 ;
+
+        int numClusters = 2;
         int numIterations = 20;
         KMeansModel clusters = KMeans.train(parsedData.rdd(), numClusters, numIterations);
         double WSSSE = clusters.computeCost(parsedData.rdd());
