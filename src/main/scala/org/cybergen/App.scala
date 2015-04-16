@@ -16,7 +16,7 @@ object App
           .setJars(Array("/home/vishnu/projects/spark-example/target/spark-example-1.0-SNAPSHOT-driver.jar"))
         val sc = new SparkContext(conf)
         // Load and parse the data
-        val data = sc.textFile("/opt/spark/spark-1.2.1-bin-hadoop2.4/data/mllib/kmeans_data.txt")
+        val data = sc.textFile("/opt/spark/current/data/mllib/kmeans_data.txt")
         val parsedData = data.map(s => Vectors.dense(s.split(' ').map(_.toDouble))).cache()
 
         // Cluster the data into two classes using KMeans
