@@ -13,7 +13,6 @@ object KNNQuery {
 
     val sc = new SparkContext(conf)
 
-    val data = sc.textFile("/opt/spark/current/data/mllib/kmeans_data.txt")
-
+    val rawData = sc.textFile("src/test/resources/nearestNeighboursample").map(line=>line.split(",").toSeq)
   }
 }
