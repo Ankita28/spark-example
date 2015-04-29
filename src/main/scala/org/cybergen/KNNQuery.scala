@@ -13,6 +13,11 @@ object KNNQuery {
 
     val sc = new SparkContext(conf)
 
-    val rawData = sc.textFile("src/test/resources/nearestNeighboursample").map(line=>line.split(",").toSeq)
+    val rawData = sc.textFile("src/test/resources/nearestNeighboursample").distinct().map(line=>line.split(",").toSeq)
+
+    val nominalFeatureSeq = Seq(false,false,false,true,false,true)
+    val isRequiredFeatureSeq = Seq(false,true,true,true,true,true)
+
+
   }
 }
