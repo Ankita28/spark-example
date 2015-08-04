@@ -7,7 +7,7 @@ import org.apache.spark.{SparkContext, SparkConf}
  * which Finds the total word count
  * and the number of times each word occurs
  */
-object App {
+object WordCount {
   def main(args: Array[String]): Unit = {
     println("Starting Application")
     // Setting spark Conf with local Configuration
