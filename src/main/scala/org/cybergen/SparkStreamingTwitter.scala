@@ -14,17 +14,20 @@ object SparkStreamingTwitter {
   def main(args: Array[String]) {
 
     Logger.getLogger("org.apache.spark").setLevel(Level.ERROR)
-    val apiKey = "***************"
-    val apiSecret = "***************"
-    val accessToken = "******************"
-    val accessTokenSecret = "********************"
+    val apiKey = "**"
+    val apiSecret = "**"
+    val accessToken = "**"
+    val accessTokenSecret = "**"
 
     System.setProperty("twitter4j.oauth.consumerKey", apiKey)
     System.setProperty("twitter4j.oauth.consumerSecret", apiSecret)
     System.setProperty("twitter4j.oauth.accessToken", accessToken)
     System.setProperty("twitter4j.oauth.accessTokenSecret", accessTokenSecret)
 
-    val sparkConf = new SparkConf().setAppName("Twitter").set("spark.executor.memory", "4g").setMaster("local[4]")
+    val sparkConf = new SparkConf()
+      .setAppName("Twitter")
+      .set("spark.executor.memory", "4g")
+      .setMaster("local[4]")
     val sc = new SparkContext(sparkConf)
 
 
