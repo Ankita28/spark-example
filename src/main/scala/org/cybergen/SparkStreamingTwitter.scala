@@ -51,7 +51,7 @@ object SparkStreamingTwitter {
 
     //WordCount
 
-    val x = tweets.flatMap(_.split(" ")).map(x => (x,1)).reduceByKey((x,y)=> (x+y)).transform(_.sortBy(_._2,false))
+    val x = tweets.flatMap(_.split(" ")).map(x => (x,1)).reduceByKey((x,y)=> x + y).transform(_.sortBy(_._2,false))
 
     x.print()
 
